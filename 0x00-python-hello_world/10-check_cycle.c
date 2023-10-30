@@ -11,27 +11,14 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *current = list;
-	void *points[1024];
-	int count_points = 1;
-	int i;
+	listint_t *rabbit = list, *turtle = list;
 
-	if (!list || !list->next)
-		return (0);
-
-	points[count_points - 1] = list->next;
-	current = current->next;
-
-	while (current->next)
+	while (rabbit && rabbit->next)
 	{
-		for (i = 0; i < count_points; i++)
-		{
-			if (current->next == points[i])
-				return (1);
-		}
-		points[count_points] = current->next;
-		count_points++;
-		current = current->next;
+		turtle = turtle->next;
+		rabbit = rabbit->next->next;
+		if (rabbit == turtle)
+			return (1);
 	}
 	return (0);
 }
