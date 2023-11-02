@@ -11,4 +11,4 @@ if __name__ == "__main__":
         for arg in lst:
             if arg != sys.argv[0]:
                 sum += int(arg)
-    print ("{}".format(sum))
+    print("{}".format(sum))
