@@ -9,4 +9,4 @@ def print_matrix_integer(matrix=[[]]):
             print()
         for i in range(len(vector)):
             print("{:d}".format(vector[i]),
-                    end=" " if i != len(vector) - 1 else "\n")
+                  end=" " if i != len(vector) - 1 else "\n")
